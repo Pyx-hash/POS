@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pre-order System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pre-order System</h1>
+    <div class="cart-summary" id="cartSummary"></div>
+  </header>
+
+  <main class="container">
+    <section class="products" id="products"></section>
+
+    <aside class="sidebar">
+      <h2>Cart / POS</h2>
+      <div id="cartList"></div>
+
+      <div class="calc">
+        <div>Subtotal: <span id="subtotal">0.00</span></div>
+        <div>Tax (12%): <span id="tax">0.00</span></div>
+        <div class="total">Total: <strong id="total">0.00</strong></div>
+      </div>
+
+      <hr />
+
+      <h3>Customer</h3>
+      <form id="orderForm">
+        <input type="text" id="name" placeholder="Full name" required />
+        <input type="email" id="email" placeholder="Email (for Gmail confirmation)" />
+        <input type="tel" id="phone" placeholder="Phone +639XXXXXXXXX (for SMS)" />
+        <button type="submit">Place Pre-order</button>
+      </form>
+
+      <div id="message"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>Local mode demo · Socket updates + Excel autosave</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
